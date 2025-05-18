@@ -2,7 +2,8 @@ const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('toilatien', 'root', null, {
   host: 'localhost',
-  dialect: 'mysql'
+  dialect: 'mysql',
+  logging: false,
 });
 
 let connectDB = async () => {
@@ -13,3 +14,5 @@ let connectDB = async () => {
     console.error('Unable to connect to the database:', error);
   }
 }
+
+module.exports = connectDB;
